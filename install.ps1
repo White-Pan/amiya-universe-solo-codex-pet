@@ -42,7 +42,7 @@ foreach ($name in $files) {
         if ((Get-FileHash -LiteralPath $existing).Hash -ne $hashes[$name]) { $different = $true }
     }
 }
-if ($different -and -not $Update) { throw 'A different version is installed. Run install.cmd -Update to back it up and update.' }
+if ($different -and -not $Update) { throw 'A different version is installed. To back it up and update, run: powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\install.ps1 -Update' }
 New-Item -ItemType Directory -Force -Path $destination | Out-Null
 if ($different) {
     $backup = Join-Path $destination ('backups/' + [DateTime]::UtcNow.ToString('yyyyMMdd-HHmmss-fffffff'))

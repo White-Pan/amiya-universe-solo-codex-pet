@@ -4,7 +4,7 @@
 
 这是一份已经制作好的 **Codex v2 自定义宠物**。下载后即可安装，无须运行图像生成、配置 API Key 或安装 Python / Node.js。
 
-[下载 v1.0.1 完整安装包](https://github.com/White-Pan/amiya-universe-solo-codex-pet/releases/download/v1.0.1/amiya-universe-solo-v1.0.1.zip) · [查看所有版本](https://github.com/White-Pan/amiya-universe-solo-codex-pet/releases)
+[下载 v1.0.2 完整安装包](https://github.com/White-Pan/amiya-universe-solo-codex-pet/releases/download/v1.0.2/amiya-universe-solo-v1.0.2.zip) · [查看所有版本](https://github.com/White-Pan/amiya-universe-solo-codex-pet/releases)
 
 | 待机 | 工作中 | 16 方向注视 |
 | :---: | :---: | :---: |
@@ -23,8 +23,10 @@
 双击 **`install.cmd`**，或在解压目录打开 PowerShell：
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File .\install.ps1
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\install.ps1
 ```
+
+**请复制上面的完整命令，不要直接运行 `./install.ps1` 或 `.\install.ps1`**：系统签名策略可能提示“未进行数字签名 / 无法加载文件”。也可以双击 `install.cmd`，它已包含相同启动参数。
 
 `ExecutionPolicy Bypass` 仅用于该次 PowerShell 进程，不修改系统执行策略。安装无需管理员权限，不会联网下载依赖。
 
@@ -57,7 +59,7 @@ Windows 默认对应 `%USERPROFILE%\.codex\pets\amiya-universe-solo\`。如果�
 重复安装相同文件不会创建多余备份。如果检测到不同版本，脚本默认停止；显式更新会先备份原来的两个文件：
 
 ```powershell
-.\install.cmd -Update
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\install.ps1 -Update
 ```
 
 ```sh
