@@ -10,7 +10,7 @@ if ([string]::IsNullOrWhiteSpace($CodexHome)) {
 }
 $petSource = Join-Path $PSScriptRoot 'pet'
 $files = @('pet.json', 'spritesheet.webp')
-$manifest = Get-Content -LiteralPath (Join-Path $petSource 'pet.json') -Raw | ConvertFrom-Json
+$manifest = Get-Content -LiteralPath (Join-Path $petSource 'pet.json') -Raw -Encoding UTF8 | ConvertFrom-Json
 if ($manifest.id -ne $petId -or $manifest.spriteVersionNumber -ne 2 -or $manifest.spritesheetPath -ne 'spritesheet.webp') {
     throw 'Unexpected pet manifest. Download a complete, unmodified package.'
 }
@@ -42,7 +42,7 @@ foreach ($name in $files) {
         if ((Get-FileHash -LiteralPath $existing).Hash -ne $hashes[$name]) { $different = $true }
     }
 }
-if ($different -and -not $Update) { throw 'A different version is installed. Run install.ps1 -Update to back it up and update.' }
+if ($different -and -not $Update) { throw 'A different version is installed. Run install.cmd -Update to back it up and update.' }
 New-Item -ItemType Directory -Force -Path $destination | Out-Null
 if ($different) {
     $backup = Join-Path $destination ('backups/' + [DateTime]::UtcNow.ToString('yyyyMMdd-HHmmss-fffffff'))
