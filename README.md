@@ -4,11 +4,17 @@
 
 这是一份已经制作好的 **Codex v2 自定义宠物**。下载后即可安装，无须运行图像生成、配置 API Key 或安装 Python / Node.js。
 
-[下载 v1.0.2 完整安装包](https://github.com/White-Pan/amiya-universe-solo-codex-pet/releases/download/v1.0.2/amiya-universe-solo-v1.0.2.zip) · [查看所有版本](https://github.com/White-Pan/amiya-universe-solo-codex-pet/releases)
+[下载 v1.1.0 完整安装包](https://github.com/White-Pan/amiya-universe-solo-codex-pet/releases/download/v1.1.0/amiya-universe-solo-v1.1.0.zip) · [查看所有版本](https://github.com/White-Pan/amiya-universe-solo-codex-pet/releases)
 
 | 待机 | 工作中 | 16 方向注视 |
 | :---: | :---: | :---: |
 | ![待机](assets/idle.gif) | ![思考与工作](assets/working.gif) | ![注视方向](assets/look.gif) |
+
+## v1.1.0 更新
+
+工作中动作改为演奏动画：从用户提供的视频中选取 6 个关键姿势，处理透明背景并适配 `running` 的 6 帧规范。其余动作和 16 方向注视保持不变，已验证图集并通过独立视觉复核。视频抽帧的细节与原生成动画略有区别，循环交界处披风变化稍明显。
+
+保留原思考动作的 [v1.0.2 安装包](https://github.com/White-Pan/amiya-universe-solo-codex-pet/releases/tag/v1.0.2) 仍可下载。
 
 ## 下载与安装
 
@@ -80,7 +86,7 @@ sh install.sh --update
 | --- | --- |
 | 参考处理 | 读取用户提供的 WebM，挑选关键帧，提取兔耳、帽子、眼睛、服装与配色等稳定特征。 |
 | 形象与动画 | 使用内置图像生成能力与 hatch-pet 工作流，建立主形象并制作各状态动画；不依赖使用者重新生成。 |
-| 状态语义 | 单独制作 `running` 工作状态：思考、专注与手部动作。它与左右移动动画不同，这一独立设计已保留。 |
+| 状态语义 | 新版 `running` 工作状态采用用户确认的 WebM 演奏动作，由 Codex 提取关键帧、去除背景并适配图集；旧版思考动作可在 v1.0.2 Release 中下载。 |
 | 注视动作 | 制作四个主方向参考，再生成两组连贯注视帧，检查朝向、角色大小、脚下位置与衔接。 |
 | 质量检查 | 执行逐帧与图集检查、透明边缘处理、方向盲测和独立视觉复核，修正错向与裁切问题。 |
 | 交付工程 | 编写离线预览、跨平台安装脚本、校验和、文档及公开发布目录，排除个人文件。 |
@@ -98,7 +104,7 @@ sh install.sh --update
 | `jumping` | 蓄力、跳起与落地 | 5 |
 | `failed` | 失落反应 | 8 |
 | `waiting` | 等待回应或批准 | 6 |
-| `running` | 工作与思考，非移动 | 6 |
+| `running` | 拉奏乐器、闭眼与身体摆动，非移动 | 6 |
 | `review` | 查看结果 | 6 |
 | 注视 | 顺时针 16 方向 | 16 |
 
