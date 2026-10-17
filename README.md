@@ -103,12 +103,12 @@ sh install.sh --update
 
 这是基于《明日方舟》阿米娅「寰宇独奏」形象制作的**非官方同人宠物**，不代表角色权利方或 OpenAI 官方发布。角色、名称、服装及原始美术的相关权利归各自权利人。本仓库公开可下载，不代表对第三方角色素材授予商业使用许可；详情见 [NOTICE.md](NOTICE.md)。
 
-其他
+## 其他
 
 1. 本项目大量信息与原美术素材来源于[https://prts.wiki/w/%E9%A6%96%E9%A1%B5 ](https://prts.wiki/w/%E9%A6%96%E9%A1%B5)在此感谢
 2. 没有GPT-6 Astra，本项目无法完成
 
-At the End
+## At the End
 
 ![本人亲自书写，仅供娱乐](assets/amiya-handwritten.jpg)
 
@@ -116,6 +116,6 @@ At the End
 
 以上内容
 
-All Rights \*\*Not\*\* Reserved.
+All Rights **Not** Reserved.
 
 2026.10
